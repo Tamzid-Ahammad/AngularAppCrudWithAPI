@@ -1,0 +1,24 @@
+
+<a routerLink="/designation/add" class="btn btn-info">Add New</a>
+<button class="btn btn-primary" (click)="LoadData()">Refresh</button>
+<hr />
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let designation of designations">
+            <td>{{designation.id}}</td>
+            <th>{{designation.name}}</th>
+            <td>
+                <a [routerLink]="['/designation/edit/', designation.id]" class="btn btn-warning">Edit</a>
+                <!--  <a [routerLink]="['/designation/view/', designation.id]" class="btn btn-warning">Edit</a> -->
+                <button class="btn btn-danger" (click)="DeleteDesignation(designation)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

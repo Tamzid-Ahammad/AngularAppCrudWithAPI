@@ -1,0 +1,21 @@
+
+<form [formGroup]="form" form (ngSubmit)="UpdateDesignation()">
+    <fieldset>
+        <legend>
+            Designation Add
+        </legend>
+
+        <label for="name">Name:</label>
+
+        <input id="name" class="form-control" formControlName="name" />
+
+        <span class="alert alert-danger" *ngIf="name.invalid && name.errors?.['required']">
+            name  required
+        </span>
+
+
+        <hr />
+        <button type="submit">Save</button>
+
+    </fieldset>
+</form>
